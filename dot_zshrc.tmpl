@@ -61,6 +61,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 . ~/.cargo/env
+source /opt/spack/share/spack/setup-env.sh # setup Spack
 {{ end -}}
 
 export PATH=$PATH:~/.local/bin
