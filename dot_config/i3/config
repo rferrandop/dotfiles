@@ -23,6 +23,9 @@ bindsym $mod+b exec brave
 # Restart i3
 bindsym $mod+Shift+r restart
 
+# Screenshot region
+bindsym $mod+s exec --no-startup-id maim -m 10 --select | xclip -selection clipboard -t image/png
+
 # Controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
@@ -31,7 +34,6 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioMute exec --no-startup-id "pactl -- set-sink-volume 0 0%"
 bindsym XF86AudioLowerVolume exec --no-startup-id "pactl -- set-sink-volume 0 -5%"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl -- set-sink-volume 0 +5%"
-
 
 #############################################################3
 # Change focus
@@ -82,15 +84,15 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 
 # Applications on specific workspace
 assign [title="Spotify"] $ws8
-assign [class="^brave-browser"] $ws2
+assign [class="brave-browser"] $ws2
 assign [class="Alacritty"] $ws1
 assign [class="Telegram"] $ws7
-assign [class="Discord"] $ws7
+assign [class="^discord"] $ws7
 for_window [title="geo_em.d01.nc"] floating enable
 
 mode "resize" {
-    bindsym h resize shrink width 5 px 
-    bindsym j resize grow height 5 px 
+    bindsym h resize shrink width 5 px
+    bindsym j resize grow height 5 px
     bindsym k resize shrink height 5 px
     bindsym l resize grow width 5 px
 
