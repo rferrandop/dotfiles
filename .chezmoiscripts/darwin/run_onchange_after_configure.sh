@@ -23,7 +23,7 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock launchanim -bool false
-defaults write com.apple.dock orientation left
+defaults write com.apple.dock orientation bottom
 defaults write com.apple.dock show-recents -bool false
 
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true

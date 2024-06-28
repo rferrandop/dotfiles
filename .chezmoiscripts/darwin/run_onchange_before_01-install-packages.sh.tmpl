@@ -5,6 +5,7 @@
     "awk"
     "cmake"
     "cowsay"
+    "chezmoi"
     "fd"
     "fontconfig"
     "freetype"
@@ -25,7 +26,6 @@
     "maven"
     "neovim"
     "pre-commit"
-    "sdkman-cli"
     "redis"
     "ripgrep"
     "speedtest-cli"
@@ -40,6 +40,7 @@
     "1password"
     "1password-cli"
     "alacritty"
+    "brave-browser"
     "discord"
     "font-jetbrains-mono-nerd-font"
     "font-sf-mono"
@@ -57,7 +58,6 @@
     "slack"
     "spotify"
     "telegram"
-    "thunderbird"
     "visual-studio-code"
     "wireshark"
     "whatsapp" -}}
@@ -70,3 +70,6 @@ cask "{{ . }}"
 {{ end -}}
 EOF
 {{ end -}}
+
+brew tap sdkman/tap
+brew install sdkman-cli
