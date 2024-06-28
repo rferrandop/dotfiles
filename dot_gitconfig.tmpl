@@ -1,0 +1,28 @@
+{{ if eq .hostname "raulf-macbook" }}
+[credential]
+	helper = osxkeychain
+{{ end }}
+
+[alias]
+  main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+  fomo = !git fetch origin $(git main-branch) && git rebase origin/$(git main-branch) --autostash
+
+[user]
+  name = Raul Ferrando
+  {{ if .personal }}
+  email = {{ .email }}
+  signingKey = {{ .gpg_id }}
+  {{ else }}
+  email =  {{ .email }}
+  signingKey = {{ .gpg_id }}
+  {{ end }}
+
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[commit]
+  gpgSign = true

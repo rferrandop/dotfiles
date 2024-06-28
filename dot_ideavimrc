@@ -1,0 +1,50 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+let mapleader = " "
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+nmap <C-Down> <Action>(StretchSplitToBottom)
+nmap <C-Left> <Action>(StretchSplitToLeft)
+nmap <C-Right> <Action>(StretchSplitToRight)
+nmap <C-Up> <Action>(StretchSplitToTop)
+
+nmap <A-j> <Action>(MoveLineDown)
+nmap <A-k> <Action>(MoveLineUp)
+
+map <C-s> <Action>(SaveAll)
+map <S-h> <Action>(PreviousTab)
+map <S-l> <Action>(NextTab)
+
+nmap <leader>bd <Action>(CloseEditor)
+nmap <leader>bD <Action>(CloseAllEditorsButActive)
+
+
+nmap <leader>gi <Action>(GoToImplementation)
+
+" Debug
+nmap <leader>ds <Action>(ChooseDebugConfiguration)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>dr <Action>(Resume)
+map <leader>do <Action>(StepOver)
+map <leader>di <Action>(StepInto)
+map <leader>dl <Action>(ViewBreakpoints)
+map <leader>dc <Action>(Stop)
+
+" Coding mappings
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>ci <Action>(OptimizeImports)
+nmap <leader>cc <Action>(CommentByLineComment)
+vmap <leader>cc <Action>(CommentByLineComment)
+nmap <leader>cb <Action>(CommentByBlockComment)
+vmap <leader>cb <Action>(CommentByBlockComment)
+
+" https://plugins.jetbrains.com/plugin/8015-bitbucket-linky
+" Set a custom keymap in Keymaps -> Plug-ins -> Bitbucket Linky
+" <C-Shift-G>

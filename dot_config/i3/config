@@ -1,0 +1,114 @@
+
+# Set mod key
+set $mod Mod4
+
+# Hide borders
+hide_edge_borders none
+
+# Start Terminal
+bindsym $mod+Return exec alacritty
+
+# Start Neovide
+bindsym $mod+n exec neovide
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start program launcher
+bindsym $mod+space exec --no-startup-id rofi -show drun
+
+# Start Firefox
+bindsym $mod+b exec brave-browser
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# Controls
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+
+bindsym XF86AudioMute exec --no-startup-id "pactl -- set-sink-volume 0 0%"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl -- set-sink-volume 0 -5%"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl -- set-sink-volume 0 +5%"
+
+
+#############################################################3
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+## Workspaces
+# Set workspace names
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+
+# Move to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# Move window to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+
+# Applications on specific workspace
+assign [title="Spotify"] $ws8
+assign [class="^brave-browser"] $ws2
+assign [class="Alacritty"] $ws1
+assign [class="Telegram"] $ws7
+assign [class="Discord"] $ws7
+for_window [title="geo_em.d01.nc"] floating enable
+
+mode "resize" {
+    bindsym h resize shrink width 5 px 
+    bindsym j resize grow height 5 px 
+    bindsym k resize shrink height 5 px
+    bindsym l resize grow width 5 px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Mod1+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# Switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+default_border pixel 1
+default_floating_border pixel 1
+
+#### Autostart applications
+#
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

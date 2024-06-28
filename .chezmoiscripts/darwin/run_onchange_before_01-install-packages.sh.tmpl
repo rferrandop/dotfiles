@@ -1,0 +1,55 @@
+#!/bin/bash
+
+{{ if eq .hostname "raulf-macbook" -}}
+{{ $brew_packages := list
+    "awk"
+    "fd"
+    "fzf"
+    "git"
+    "htop"
+    "jenv"
+    "jq"
+    "lazygit"
+    "maven"
+    "neovim"
+    "node"
+    "pre-commit"
+    "redis"
+    "ripgrep"
+    "speedtest-cli"
+    "tmux"
+    "wget"
+    "yq"
+    "zsh" -}}
+
+{{ $cask_packages := list 
+    "1password"
+    "1password-cli"
+    "alacritty"
+    "discord"
+    "google-chrome"
+    "graalvm-jdk"
+    "intellij-idea-ce"
+    "mos"
+    "microsoft-teams"
+    "microsoft-word"
+    "microsoft-outlook"
+    "neovide"
+    "openvpn-connect"
+    "postman"
+    "soapui"
+    "slack"
+    "spotify"
+    "telegram"
+    "thunderbird"
+    "wireshark"
+    "whatsapp" -}}
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($brew_packages | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($cask_packages | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF
+{{ end -}}

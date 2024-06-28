@@ -1,0 +1,13 @@
+#!/bin/bash
+
+brew tap homebrew/cask-fonts
+
+fonts=(
+    font-jetbrains-mono-nerd-font
+)
+
+for font in "${fonts[@]}"
+do
+    brew install --cask "$font"
+done
+exit
