@@ -39,7 +39,7 @@ yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Selec
 yabai -m rule --add app="^Microsoft Teams*" title="^(Daily - Valencia)" manage=off
 yabai -m rule --add app="^IntelliJ*" title="^(Evaluate|Settings)" manage=off
 
-yabai -m rule --add app="^Brave Browser$" space=2
+yabai -m rule --add app="^(Brave Browser|Google Chrome)$" space=2
 yabai -m rule --add app="^Alacritty$" space=1
 yabai -m rule --add app="^Slack$" space=8
 yabai -m rule --add app="^Microsoft Teams*" space=9
