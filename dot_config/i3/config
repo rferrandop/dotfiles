@@ -18,7 +18,7 @@ bindsym $mod+q kill
 bindsym $mod+space exec --no-startup-id rofi -show drun
 
 # Start Firefox
-bindsym $mod+b exec brave
+bindsym $mod+b exec microsoft-edge-stable
 
 # Restart i3
 bindsym $mod+Shift+r restart
