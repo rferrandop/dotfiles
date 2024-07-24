@@ -3,6 +3,11 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
+" Plugins
+Plug 'preservim/nerdtree'
+
+set NERDTree
+
 let mapleader = " "
 
 map <C-h> <C-w>h
@@ -25,7 +30,6 @@ map <S-l> <Action>(NextTab)
 nmap <leader>bd <Action>(CloseEditor)
 nmap <leader>bD <Action>(CloseAllEditorsButActive)
 
-
 nmap <leader>gi <Action>(GoToImplementation)
 
 " Debug
@@ -41,9 +45,11 @@ map <leader>dc <Action>(Stop)
 nmap <leader>cf <Action>(ReformatCode)
 nmap <leader>ci <Action>(OptimizeImports)
 nmap <leader>cc <Action>(CommentByLineComment)
-vmap <leader>cc <Action>(CommentByLineComment)
-nmap <leader>cb <Action>(CommentByBlockComment)
 vmap <leader>cb <Action>(CommentByBlockComment)
+
+" Projects
+map <C-f> <Action>(GotoClass)
+map <C-S-f> <Action>(GotoFile)
 
 " https://plugins.jetbrains.com/plugin/8015-bitbucket-linky
 " Set a custom keymap in Keymaps -> Plug-ins -> Bitbucket Linky
