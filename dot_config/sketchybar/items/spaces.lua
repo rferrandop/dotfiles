@@ -20,7 +20,7 @@ for i = 1, 10, 1 do
 			padding_right = 20,
 			color = colors.grey,
 			highlight_color = colors.white,
-			font = "sketchybar-app-font:Regular:16.0",
+			font = "sketchybar-app-font:Regular:14.0",
 			y_offset = -1,
 		},
 		padding_right = 1,
