@@ -42,13 +42,14 @@ yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
-yabai -m rule --add app="^Microsoft Teams*" title="^(Daily - Valencia)" manage=off
+yabai -m rule --add app="^Microsoft Teams*" title="^Daily - Valencia" manage=off
 yabai -m rule --add app="^IntelliJ*" title="^(Evaluate|Settings)" manage=off
+yabai -m rule --add app="^FortiClient" manage=off
 
 yabai -m rule --add app="^(Brave Browser|Google Chrome)$" space=2
 yabai -m rule --add app="^Alacritty$" space=1
-yabai -m rule --add app="^Slack$" space=8
-yabai -m rule --add app="^Microsoft Teams*" space=9
+yabai -m rule --add app="^Slack$" space=6
+yabai -m rule --add app="^Microsoft Teams*" space=5
 yabai -m rule --add app="^IntelliJ*" space=3
 yabai -m rule --add app="^Spotify$" space=10
 
