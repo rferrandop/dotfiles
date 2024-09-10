@@ -26,6 +26,11 @@ export EDITOR=nvim
 export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+# Java stuff
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 {{ end -}}
 
 # Aliases
@@ -50,18 +55,9 @@ alias paste="pbpaste"
 
 # PATH
 
-# Java stuff
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 {{ if .personal }}
-source "/home/raulf/.sdkman/bin/sdkman-init.sh"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"
 
-. ~/.cargo/env
-source /opt/spack/share/spack/setup-env.sh # setup Spack
 {{ end -}}
 
 export PATH=$PATH:~/.local/bin

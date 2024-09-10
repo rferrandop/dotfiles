@@ -4,28 +4,8 @@ set -eo pipefail
 
 {{ if eq .os "linux" }}
 
-{{ if eq .os_release "arch" }}
-sudo pacman -Syu
-sudo pacman -Sy curl i3-wm i3status jq neovim polybar ripgrep yq wget \
-       zsh gcc gcc-fortran make cmake alacritty zsh discord flatpak rofi \
-       playerctl
 
-# Install yay
-       sudo pacman -Sy --needed git base-devel
-       git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
-       cd /tmp/yay
-       makepkg -si
-
-# Install nerd font
-       mkdir -p ~/.fonts
-       wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip  -O /tmp/jetbrains-mono.zip
-       unzip /tmp/jetbrains-mono.zip -d ~/.fonts
-       rm /tmp/jetbrains-mono.zip
-       fc-cache -f -v
-
-
-
-{{ else if eq .os_release "fedora" }}
+{{ if eq .os_release "fedora" }}
 
 # Enable RPM Fusion repositories
     sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
