@@ -17,7 +17,7 @@ ctrl + shift - l : yabai -m display --focus prev
 # move focused window to next/prev workspace
 lalt + shift - 1 : yabai -m window --space 1
 alt + shift - 2 : yabai -m window --space 2
-alt + shift - 3 : yabai -m window --space 3
+lalt + shift - 3 : yabai -m window --space 3
 alt + shift - 4 : yabai -m window --space 4
 alt + shift - 5 : yabai -m window --space 5
 alt + shift - 6 : yabai -m window --space 6

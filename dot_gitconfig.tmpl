@@ -1,4 +1,4 @@
-{{ if eq .hostname "raulf-macbook" }}
+{{ if eq .chezmoi.os "darwin" }}
 [credential]
 	helper = osxkeychain
 {{ end }}
@@ -9,10 +9,8 @@
 
 [user]
   name = Raul Ferrando
-  {{ if .personal }}
   email = {{ .email }}
-  {{ else }}
-  email =  {{ .email }}
+  {{ if .is_work }}
   signingKey = {{ .gpg_id }}
   {{ end }}
 
@@ -23,7 +21,7 @@
 [pull]
 	rebase = true
 
-{{ if eq .hostname "raulf-macbook" }}
+{{ if .is_work }}
 [commit]
   gpgSign = true
 {{ end }}

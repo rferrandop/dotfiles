@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 # User
 export EDITOR=nvim
 
-{{ if eq .hostname "raulf-macbook" }}
+{{ if .is_work }}
 export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
@@ -39,13 +39,13 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias gg="lazygit"
 
-{{ if eq .hostname "raulf-macbook" }}
+{{ if not .is_work }}
 alias rkeys="docker exec -it redis-server redis-cli -n 1 KEYS '*'"
 alias rflush="docker exec -it redis-server redis-cli -n 1 FLUSHALL"
 alias format="mvn spotless:apply"
 {{ end -}}
 
-{{ if eq .os "linux" }}
+{{ if eq .chezmoi.os "linux" }}
 alias copy="xclip"
 alias paste="xclip -o"
 {{ else }}
@@ -55,9 +55,8 @@ alias paste="pbpaste"
 
 # PATH
 
-{{ if .personal }}
+{{ if not .is_work }}
 . "$HOME/.cargo/env"
-
 {{ end -}}
 
 export PATH=$PATH:~/.local/bin

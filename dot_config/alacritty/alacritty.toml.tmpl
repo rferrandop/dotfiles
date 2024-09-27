@@ -1,11 +1,11 @@
 import = ["~/.config/alacritty/themes/tokyonight.toml"]
 
-{{ if eq .os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 window.option_as_alt = 'Both'
 {{ end }}
 
 [font]
-{{ if eq .hostname "raulf-macbook" }}
+{{ if eq .chezmoi.os "darwin" }}
 size = 16.0
 {{ else }}
 size = 14.0
@@ -24,7 +24,7 @@ style = "Italic"
 family = "JetBrainsMonoNL Nerd Font Mono"
 style = "Regular"
 
-{{ if eq .os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 [shell]
 program = "/usr/local/bin/tmux"
 args = [
