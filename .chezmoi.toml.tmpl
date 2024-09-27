@@ -1,30 +1,9 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $personal := false -}}
-{{- $os := .chezmoi.os -}}
-{{- $os_release := .chezmoi.os -}}
-
-{{/* work around unreliable hostname on darwin */}}
-{{- $hostname := .chezmoi.hostname -}}
-{{- if eq .chezmoi.os "darwin" -}}
-{{-   $computerName := output "scutil" "--get" "ComputerName" | trim -}}
-{{-   if eq $computerName "Raul’s MacBook Pro" -}}
-{{-     $hostname = "raulf-macbook" -}}
-{{-   else -}}
-{{-     $hostname = $computerName -}}
-{{-   end -}}
-{{- end -}}
-
-{{- if eq $os "linux" -}}
-{{- $os_release = .chezmoi.osRelease.id -}}
-{{-    $personal = true -}}
-{{- end -}}
+{{- $is_work := promptBoolOnce . "is_work" "Is a work computer?" -}}
 
 {{- $gpg_id := promptStringOnce . "gpg_id" "GPG key id" -}}
 
 [data]
     email = {{ $email | quote }}
-    personal = {{ $personal }}
-    hostname = {{ $hostname | quote }}
-    os = {{ $os | quote }}
-    os_release = {{ $os_release | quote }}
+    is_work = {{ $is_work }}
     gpg_id = {{ $gpg_id | quote }}
