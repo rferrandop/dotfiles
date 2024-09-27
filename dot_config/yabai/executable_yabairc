@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
 yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
 
@@ -48,10 +48,11 @@ yabai -m rule --add app="^FortiClient" manage=off
 
 yabai -m rule --add app="^(Arc|Brave Browser|Google Chrome)$" space=2
 yabai -m rule --add app="^Alacritty$" space=1
-yabai -m rule --add app="^Slack$" space=6
-yabai -m rule --add app="^Microsoft Teams*" space=5
+yabai -m rule --add app="^Slack$" space=7
+yabai -m rule --add app="^Microsoft Teams*" space=6
 yabai -m rule --add app="^IntelliJ*" space=3
 yabai -m rule --add app="^Spotify$" space=10
 yabai -m rule --add app="^Discord$" space=9
+yabai -m rule --add app="^Obsidian$" space=4
 
 echo "yabai configuration loaded.."

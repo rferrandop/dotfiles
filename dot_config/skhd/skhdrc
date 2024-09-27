@@ -15,7 +15,7 @@ ctrl + shift - h : yabai -m display --focus next
 ctrl + shift - l : yabai -m display --focus prev
 
 # move focused window to next/prev workspace
-alt + shift - 1 : yabai -m window --space 1
+lalt + shift - 1 : yabai -m window --space 1
 alt + shift - 2 : yabai -m window --space 2
 alt + shift - 3 : yabai -m window --space 3
 alt + shift - 4 : yabai -m window --space 4
@@ -41,3 +41,6 @@ ctrl + shift - c : yabai -m query --windows --window | jq -r '.app' | pbcopy
 
 cmd - tab : id="$(yabai -m query --spaces --display | jq 'sort_by(.index) | reverse | .[map(."has-focus") | index(true) - 1].index')" && yabai -m space --focus "${id}"
 cmd + ctrl - tab : id="$(yabai -m query --spaces --display | jq 'sort_by(.index) | .[map(."has-focus") | index(true) - 1].index')" && yabai -m space --focus "${id}"
+
+# Open ranger editor
+cmd - e : alacritty -e ranger
