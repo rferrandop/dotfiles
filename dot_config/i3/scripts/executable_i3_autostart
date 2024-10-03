@@ -47,6 +47,3 @@ hsetroot -cover "$idir"/theme/wallpaper
 
 # Lauch compositor
 "$idir"/scripts/i3_comp
-
-# Start mpd
-exec mpd &

@@ -4,6 +4,11 @@ set -eo pipefail
 
 {{ if eq .os "linux" }}
 
+{{ if eq .os_release "arch" }}
+
+sudo pacman -Syu
+
+{{ end }}
 
 {{ if eq .os_release "fedora" }}
 
