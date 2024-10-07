@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+{{ if eq .osId "linux-arch" -}}
+
+sudo mkdir -p /etc/systemd/sleep.conf.d
+sudo touch /etc/systemd/sleep.conf.d/no-hibernate.conf
+
+sudo tee /etc/systemd/sleep.conf.d/no-hibernate.conf > /dev/null <<EOF
+[Sleep]
+# disable hibernation
+# doc : https://archived.forum.manjaro.org/t/turn-off-disable-hibernate-completely/139939
+AllowHibernation=no
+AllowHybridSleep=no
+AllowSuspendThenHibernate=no
+EOF
+
+{{ end -}}

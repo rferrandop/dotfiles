@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+{{ if eq .osId "linux-arch" -}}
+{{ $packages := list
+	"spotify"
+	"1password"
+	"1password-cli"
+	-}}
+
+set -eufo pipefail
+
+yay -Syu
+yay -Sy {{ $packages | join " " }}
+
+{{ end -}}

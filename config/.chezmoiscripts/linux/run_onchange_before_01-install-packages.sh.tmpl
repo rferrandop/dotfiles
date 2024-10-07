@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+{{ if eq .osId "linux-arch" }}
+{{ $packages := list
+	"neovim"
+	"git"
+	"alacritty"
+	"bat"
+	"jq"
+	"zsh"
+	"i3-wm"
+	"rofi"
+	"polybar"
+	"playerctl" 
+	"htop"
+	-}}
+
+
+{{ $sudo := "sudo " -}}
+{{ if eq .chezmoi.username "root" -}}
+{{	$sudo = "" -}}
+{{ end -}}
+
+set -eufo pipefail
+
+{{ $sudo }}pacman -Syu
+{{ $sudo }}pacman -Sy {{ $packages | join " " }}
+
+{{ end -}}

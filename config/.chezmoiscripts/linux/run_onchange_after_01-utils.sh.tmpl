@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+{{ if eq .osId "linux-arch" -}}
+
+# Change default shell
+chsh -s $(which zsh)
+
+{{ end -}}
