@@ -23,12 +23,15 @@ set $browser firefox
 bindsym $mod+Return exec $terminal
 bindsym $mod+b exec $browser
 bindsym $mod+space exec rofi -show drun
+bindsym $mod+Shift+z exec boomer
 #############################################
 
 # Assign applications
 #############################################
 assign [class="Alacritty"] $ws1
 assign [class="firefox"] $ws2
+assign [class="TelegramDesktop"] $ws9
+assign [class="discord"] $ws9
 assign [class="Spotify"] $ws10
 
 for_window [class="1Password"] floating enable
@@ -129,3 +132,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Media control
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +2%
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -2%
+bindsym XF86AudioMute exec pactl -- set-sink-mute 0 toggle
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPlay exec playerctl play-pause

@@ -1,0 +1,40 @@
+import = ["~/.config/alacritty/themes/gruvbox-dark.toml"]
+
+{{ if eq .osId "darwin" }}
+window.option_as_alt = 'Both'
+{{ end }}
+
+[font]
+{{ if eq .osId "darwin" }}
+size = 16.0
+{{ else }}
+size = 14.0
+{{ end }}
+
+
+[font.bold]
+family = "JetBrains Mono NL"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono NL"
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono NL"
+style = "Regular"
+
+
+[shell]
+{{ if eq .osId "darwin" }}
+program = "/usr/local/bin/tmux"
+{{ else }}
+program = "/bin/tmux"
+{{ end }}
+args = [
+    "new-session",
+    "-A",
+    "-D",
+    "-s",
+    "main"
+]
