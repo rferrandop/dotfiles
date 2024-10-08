@@ -8,11 +8,12 @@
 	"telegram-desktop"
 	"discord"
 	"boomer"
+  "portfolio-performance-bin"
 	-}}
 
 set -eufo pipefail
 
 yay -Syu
-yay -Sy {{ $packages | join " " }}
+yay -Sy --needed {{ $packages | join " " }}
 
 {{ end -}}
