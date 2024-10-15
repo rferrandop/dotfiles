@@ -1,13 +1,6 @@
 #!/usr/bin/bash
 {{ if eq .osId "linux-arch" -}}
+yay -Sy ttf-jetbrains-mono-nerd
 
-mkdir -p $HOME/.fonts
-
-# Jetbrains Mono
-# https://www.jetbrains.com/lp/mono/#key-features
-
-wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip -O /tmp/jetbrains-font.zip
-unzip /tmp/jetbrains-font.zip -d ~/.fonts
-rm /tmp/jetbrains-font.zip
 fc-cache -f -v
 {{ end -}}

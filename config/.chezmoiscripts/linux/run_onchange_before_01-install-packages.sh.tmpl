@@ -17,6 +17,9 @@
 	"xclip"
 	"tmux"
   "ripgrep"
+  "nodejs"
+  "npm"
+  "python-pdm"
 	-}}
 
 
@@ -28,6 +31,6 @@
 set -eufo pipefail
 
 {{ $sudo }}pacman -Syu
-{{ $sudo }}pacman -Sy {{ $packages | join " " }}
+{{ $sudo }}pacman -Sy --needed {{ $packages | join " " }}
 
 {{ end -}}
