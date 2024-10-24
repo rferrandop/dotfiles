@@ -19,6 +19,8 @@ source $ZSH/oh-my-zsh.sh
 # Variables
 export EDITOR=nvim
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Aliases
 alias chz="cd ~/.local/share/chezmoi"
 alias dl="cd ~/Downloads"
@@ -26,3 +28,6 @@ alias gg="lazygit"
 
 alias copy="xclip -i -sel clip"
 alias paste="xclip -sel clip -o"
+
+# Spack
+export PATH="/opt/spack/bin:$PATH"

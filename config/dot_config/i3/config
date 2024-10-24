@@ -35,6 +35,7 @@ assign [class="discord"] $ws9
 assign [class="Spotify"] $ws10
 
 for_window [class="1Password"] floating enable
+for_window [class="Ncview"] floating enable
 
 #############################################
 
