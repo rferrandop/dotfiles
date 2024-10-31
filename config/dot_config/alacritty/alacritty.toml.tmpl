@@ -1,3 +1,5 @@
+
+[general]
 import = ["~/.config/alacritty/themes/gruvbox-dark.toml"]
 
 {{ if eq .osId "darwin" }}
@@ -25,7 +27,7 @@ family = "JetBrainsMonoNL Nerd Font Mono"
 style = "Regular"
 
 
-[shell]
+[terminal.shell]
 {{ if eq .osId "darwin" }}
 program = "/usr/local/bin/tmux"
 {{ else }}
