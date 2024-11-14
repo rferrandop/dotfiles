@@ -1,0 +1,50 @@
+# change focus
+lalt - h : yabai -m window --focus west
+lalt - j : yabai -m window --focus south
+lalt - k : yabai -m window --focus north
+lalt - l : yabai -m window --focus east
+
+# shift window in current workspace
+alt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+alt + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+alt + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+
+# Fast focus screen
+alt - 1 : yabai -m display --focus 1
+alt - 2 : yabai -m display --focus 2
+
+# move focused window to next/prev workspace
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+alt + shift - 6 : yabai -m window --space 6
+alt + shift - 7 : yabai -m window --space 7
+alt + shift - 8 : yabai -m window --space 8
+alt + shift - 9 : yabai -m window --space 9
+alt + shift - 0 : yabai -m window --space 10
+
+# Move focused window to display
+ctrl + shift - 1 : yabai -m window --display 1; yabai -m display --focus 1;
+ctrl + shift - 2 : yabai -m window --display 2; yabai -m display --focus 2;
+
+# Resize windows
+ctrl + lalt - h : yabai -m window --resize right:-10:0 || yabai -m window --resize left:-10:0
+ctrl + lalt - j : yabai -m window --resize bottom:0:10 || yabai -m window --resize top:0:10
+ctrl + lalt - k : yabai -m window --resize bottom:0:-10 || yabai -m window --resize top:0:-10
+ctrl + lalt - l : yabai -m window --resize right:10:0 || yabai -m window --resize left:10:0
+
+# Restart yabai
+ctrl + shift - r : yabai --restart-service
+ctrl + shift - s : brew services restart sketchybar
+
+# Get focused application name
+ctrl + shift - c : yabai -m query --windows --window | jq -r '.app' | pbcopy
+
+cmd - tab : id="$(yabai -m query --spaces --display | jq 'sort_by(.index) | reverse | .[map(."has-focus") | index(true) - 1].index')" && yabai -m space --focus "${id}"
+cmd + ctrl - tab : id="$(yabai -m query --spaces --display | jq 'sort_by(.index) | .[map(."has-focus") | index(true) - 1].index')" && yabai -m space --focus "${id}"
+
+# Open ranger editor
+cmd - e : alacritty -e ranger
