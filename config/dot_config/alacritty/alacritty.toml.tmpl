@@ -2,10 +2,6 @@
 [general]
 import = ["~/.config/alacritty/themes/gruvbox-dark.toml"]
 
-{{ if eq .osId "darwin" }}
-window.option_as_alt = 'Both'
-{{ end }}
-
 [font]
 {{ if eq .osId "darwin" }}
 size = 16.0

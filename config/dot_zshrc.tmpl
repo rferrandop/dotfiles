@@ -23,6 +23,10 @@ export EDITOR=nvim
 {{ if not .isWork }} 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOM/.bin/bin:$PATH"
+{{ else }}
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 {{ end }}
 
 # Aliases
