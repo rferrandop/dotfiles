@@ -5,9 +5,11 @@
 
 {{- $email := promptStringOnce . "email" "Your email address" -}}
 {{- $name := promptStringOnce . "name" "Your name" -}}
+{{- $isWork := promptBoolOnce . "isWork" "Is this computer work related?" -}}
 
 
 [data]
 	osId = {{ $osId | quote }}
+    isWork = {{ $isWork }}
 	email = {{ $email | quote }}
 	name = {{ $name | quote }}

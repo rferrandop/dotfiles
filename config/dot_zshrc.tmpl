@@ -19,15 +19,21 @@ source $ZSH/oh-my-zsh.sh
 # Variables
 export EDITOR=nvim
 
+# PATH
+{{ if not .isWork }} 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOM/.bin/bin:$PATH"
+{{ end }}
 
 # Aliases
 alias chz="cd ~/.local/share/chezmoi"
 alias dl="cd ~/Downloads"
 alias gg="lazygit"
 
+{{ if eq .osId "darwin" }}
+alias copy="pbcopy"
+alias paste="pbpaste"
+{{ else }}
 alias copy="xclip -i -sel clip"
 alias paste="xclip -sel clip -o"
-
-# Spack
-export PATH="/opt/spack/bin:$PATH"
+{{ end }}
