@@ -1,33 +1,31 @@
 #!/usr/bin/bash
 {{ if eq .osId "linux-arch" }}
 {{ $packages := list
-	"neovim"
-	"git"
 	"alacritty"
-	"firefox"
-	"feh"
 	"bat"
-	"jq"
-	"zsh"
-	"i3-wm"
-	"rofi"
-	"polybar"
-	"playerctl" 
+	"feh"
+	"firefox"
+	"git"
 	"htop"
-	"wget"
+	"i3-wm"
+	"jq"
 	"lazygit"
-	"xclip"
+	"maim"
+	"neovim"
+	"neovide"
+	"nodejs"
+	"npm"
+	"obsidian"
+	"playerctl" 
+	"polybar"
+	"ripgrep"
+	"rofi"
+	"rustup"
 	"tmux"
-    "ripgrep"
-    "nodejs"
-    "npm"
-    "python-pdm"
-    "obsidian"
-    "neovide"
-    "poetry"
-    "maim"
-    "xorg-xev"
-    "rustup"
+	"wget"
+	"xclip"
+	"xorg-xev"
+	"zsh"
 	-}}
 
 
@@ -40,5 +38,8 @@ set -eufo pipefail
 
 {{ $sudo }}pacman -Syu
 {{ $sudo }}pacman -Sy --needed {{ $packages | join " " }}
+
+# Setup Rust
+rustup toolchain install stable
 
 {{ end -}}
