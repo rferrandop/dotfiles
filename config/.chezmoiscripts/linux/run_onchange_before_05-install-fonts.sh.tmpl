@@ -1,6 +1,12 @@
 #!/usr/bin/bash
 {{ if eq .osId "linux-arch" -}}
-yay -Sy ttf-jetbrains-mono-nerd
+
+{{ $fontPackages := list
+  "ttf-jetbrains-mono-nerd"
+  "ttf-meslo-nerd-font-powerlevel10k"
+  -}}
+
+yay -Sy --needed {{ $fontPackages | join " " }}
 
 fc-cache -f -v
 {{ end -}}
