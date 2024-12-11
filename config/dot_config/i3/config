@@ -16,8 +16,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #############################################
 set $mod Mod4
 set $terminal alacritty
-set $browser brave
-#set $browser zen-browser
+#set $browser brave
+set $browser zen-browser
 #############################################
 
 # Bindsym applications
@@ -33,6 +33,7 @@ bindsym $mod+Shift+z exec boomer
 assign [class="Alacritty"] $ws1
 assign [class="zen-alpha"] $ws2
 assign [class="Brave-browser"] $ws2
+assign [class="zen-beta"] $ws2
 assign [class="TelegramDesktop"] $ws9
 assign [class="discord"] $ws9
 assign [class="Spotify"] $ws10
