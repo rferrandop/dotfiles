@@ -4,6 +4,7 @@
 {{ $fontPackages := list
   "ttf-jetbrains-mono-nerd"
   "ttf-meslo-nerd-font-powerlevel10k"
+  "noto-fonts-emoji"
   -}}
 
 yay -Sy --needed {{ $fontPackages | join " " }}
