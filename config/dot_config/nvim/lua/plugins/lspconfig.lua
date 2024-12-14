@@ -61,11 +61,9 @@ function Plugin.config()
   -- See :help mason-lspconfig-settings
   require('mason-lspconfig').setup({
     ensure_installed = {
-      'eslint',
-      'tsserver',
-      'html',
-      'cssls',
-      'lua_ls',
+      	'lua_ls',
+		'rust_analyzer',
+		'clangd'
     },
     handlers = {
       -- See :help mason-lspconfig-dynamic-server-setup
@@ -75,19 +73,6 @@ function Plugin.config()
           capabilities = lsp_capabilities,
         })
       end,
-      ['tsserver'] = function()
-        lspconfig.tsserver.setup({
-          capabilities = lsp_capabilities,
-          settings = {
-            completions = {
-              completeFunctionCalls = true
-            }
-          }
-        })
-      end,
-      ['lua_ls'] = function()
-        require('plugins.lsp.lua_ls')
-      end
     }
   })
 end
@@ -109,7 +94,7 @@ function user.on_attach()
   bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
   bufmap('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
   bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
-  bufmap({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
+  bufmap({'n', 'x'}, '<leader>cf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
   bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
   bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
   bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')

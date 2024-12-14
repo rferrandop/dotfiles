@@ -30,7 +30,11 @@ Plugin.opts = {
     'vim',
     'vimdoc',
     'css',
-    'json'
+    'json',
+	'rust',
+	'c',
+	'java',
+	'toml'
   },
 }
 
