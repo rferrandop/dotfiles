@@ -2,7 +2,6 @@
 .oh-my-zsh/custom/themes/powerlevel10k/**/*.zwc
 
 .config/nvim/lazy-lock.json
-.config/nvim/lazyvim.json
 
 {{ if ne .osId "darwin" }}
 .chezmoiscripts/darwin/**
