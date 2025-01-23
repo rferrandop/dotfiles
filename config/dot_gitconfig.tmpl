@@ -1,3 +1,13 @@
 [user]
 	email = {{ .email }} 
 	name = {{ .name }}
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP3igIUiBSJvkiS60IgoVmce1fzQ+bfw0v2S84la1r0S
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
+
+[commit]
+  gpgsign = true
