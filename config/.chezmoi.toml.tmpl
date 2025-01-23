@@ -6,10 +6,12 @@
 {{- $email := promptStringOnce . "email" "Your email address" -}}
 {{- $name := promptStringOnce . "name" "Your name" -}}
 {{- $isWork := promptBoolOnce . "isWork" "Is this computer work related?" -}}
-
+{{- $hostname := promptStringOnce . "hostname" "The hostname that will be applied to this machine" -}}
 
 [data]
 	osId = {{ $osId | quote }}
+    os = {{ .chezmoi.os | quote }}
     isWork = {{ $isWork }}
 	email = {{ $email | quote }}
 	name = {{ $name | quote }}
+    hostname = {{ $hostname | quote }}
