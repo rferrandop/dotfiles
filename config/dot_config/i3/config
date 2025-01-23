@@ -7,7 +7,6 @@ font pango:monospace 8
 # Auto start applications
 ##########################################################################
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id feh --randomize --bg-fill $HOME/Pictures/wallpapers/
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ##########################################################################
