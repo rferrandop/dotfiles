@@ -13,4 +13,5 @@
 .config/polybar
 .config/i3
 .chezmoiscripts/linux/**
+.Xresources
 {{ end }}
