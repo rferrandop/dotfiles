@@ -3,10 +3,9 @@
 {{- 	$osId = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-{{- $email := promptStringOnce . "email" "Your email address" -}}
-{{- $name := promptStringOnce . "name" "Your name" -}}
-{{- $isWork := promptBoolOnce . "isWork" "Is this computer work related?" -}}
-{{- $hostname := promptStringOnce . "hostname" "The hostname that will be applied to this machine" -}}
+{{ $email := promptStringOnce . "email" "What is your email address" "email@email.com" }}
+{{ $name := promptStringOnce . "name" "What is your name" "Default Name" }}
+{{ $isWork := promptBoolOnce . "isWork" "Is this a computer for work related" false }} 
 
 [data]
 	osId = {{ $osId | quote }}
@@ -14,4 +13,3 @@
     isWork = {{ $isWork }}
 	email = {{ $email | quote }}
 	name = {{ $name | quote }}
-    hostname = {{ $hostname | quote }}

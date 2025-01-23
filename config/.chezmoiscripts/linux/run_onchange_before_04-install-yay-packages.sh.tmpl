@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-{{ if eq .osId "linux-arch" -}}
+{{ if eq .osId "linux-arch-x" }}
 {{ $packages := list
 	"1password"
 	"1password-cli"
@@ -12,12 +12,12 @@
   	"portfolio-performance-bin"
 	"spotify"
 	"telegram-desktop"
-	"zen-browser-bin"
+    "brave-nightly-bin"
 	-}}
 
 set -eufo pipefail
 
-yay -Syu
-yay -Sy --needed {{ $packages | join " " }}
+yay -Syu --noconfirm
+yay -Sy --needed --noconfirm {{ $packages | join " " }}
 
 {{ end -}}

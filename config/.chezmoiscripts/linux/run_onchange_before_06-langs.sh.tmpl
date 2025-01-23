@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+# Rust
+rustup toolchain install stable
+rustup default stable
+rustup component add rust-analyzer
+
+mkdir -p ~/.zfunc
+rustup completions zsh > ~/.zfunc/_rustup

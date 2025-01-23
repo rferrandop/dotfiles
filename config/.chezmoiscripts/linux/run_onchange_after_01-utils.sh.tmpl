@@ -1,18 +1,15 @@
 #!/usr/bin/bash
 {{ if eq .osId "linux-arch" -}}
 
-# Change default shell
-chsh -s $(which zsh)
-
 # Add custom browsers integrations to 1password
-sudo mkdir -p /etc/1password
-echo "zen-bin" | sudo tee -a /etc/1password/custom_allowed_browsers > /dev/null
+# sudo mkdir -p /etc/1password
+# echo "zen-bin" | sudo tee -a /etc/1password/custom_allowed_browsers > /dev/null
 
 # Set default x-mime applications
-xdg-mime default org.gnome.Evince.desktop application/pdf
+# xdg-mime default org.gnome.Evince.desktop application/pdf
 
 # Image filetypes
-xdg-mime default deepin-image-viewer.desktop image/png
-xdg-mime default deepin-image-viewer.desktop image/jpg
-xdg-mime default deepin-image-viewer.desktop image/webp
+# xdg-mime default deepin-image-viewer.desktop image/png
+# xdg-mime default deepin-image-viewer.desktop image/jpg
+# xdg-mime default deepin-image-viewer.desktop image/webp
 {{ end -}}
