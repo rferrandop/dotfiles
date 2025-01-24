@@ -1,0 +1,45 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+if [ ! "$(command -v brew)" ]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+{{ $brews := list
+    "bat"
+    "htop"
+    "jq"
+    "lazygit"
+    "neovim"
+    "node"
+    "ripgrep"
+    "tmux"
+    "wget"
+    "zsh" -}}
+{{ $casks := list
+    "1password-cli"
+    "1password"
+    "alacritty"
+    "brave-browser"
+    "neovide"
+    "intellij-idea-ce"
+    "obsidian"
+    "soapui"
+    "spotify"
+    "telegram"
+    "visual-studio-code"
+    "whatsapp"
+    -}}
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF
+
+
+
