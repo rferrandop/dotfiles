@@ -28,3 +28,5 @@ declare -a remove_labels=(
 for label in "${remove_labels[@]}"; do
 	dockutil --no-restart --remove "${label}" || true
 done
+
+
