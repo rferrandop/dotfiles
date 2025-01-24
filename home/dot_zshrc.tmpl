@@ -19,22 +19,24 @@ source $ZSH/oh-my-zsh.sh
 # Variables
 export EDITOR=nvim
 
-# PATH
-{{ if not .isWork }} 
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOM/.bin/bin:$PATH"
-{{ else }}
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
+# add jenv to path only for work hosts
+{{ if .work }}
+export PATH=$HOME/.jenv/bin:$PATH
 eval "$(jenv init -)"
+{{ end }}
+
+{{ if not .work }} 
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 {{ end }}
 
 # Aliases
 alias chz="cd ~/.local/share/chezmoi"
+alias chze="chezmoi edit"
 alias dl="cd ~/Downloads"
 alias gg="lazygit"
 
-{{ if eq .osId "darwin" }}
+{{ if eq .os "darwin" }}
 alias copy="pbcopy"
 alias paste="pbpaste"
 {{ else }}
