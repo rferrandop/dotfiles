@@ -3,13 +3,13 @@
 
 .config/nvim/lazy-lock.json
 
-{{ if ne .osId "darwin" }}
+{{ if ne .os "darwin" }}
 .chezmoiscripts/darwin/**
 .config/skhd
 .config/yabai
 {{ end }}
 
-{{ if ne .osId "linux-arch" }}
+{{ if ne .os "linux" }}
 .config/polybar
 .config/i3
 .chezmoiscripts/linux/**
