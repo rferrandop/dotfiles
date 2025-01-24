@@ -5,7 +5,7 @@ set -eufo pipefail
 defaults write -g AppleEnableSwipeNavigateWithScrolls -int 0
 defaults write -g AppleMiniaturizeOnDoubleClick -int 0
 defaults write -g ApplePressAndHoldEnabled -int 0
-defaults write -g AppleShowAllExtensions -int 1
+defaults write -g AppleShowAllExtensions -int 0
 defaults write -g CGDisableCursorLocationMagnification -int 0
 defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 2
