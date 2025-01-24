@@ -29,4 +29,9 @@ for label in "${remove_labels[@]}"; do
 	dockutil --no-restart --remove "${label}" || true
 done
 
+dockutil --add /Applications/Alacritty.app
+dockutil --add "/Applications/Brave Browser.app"
+dockutil --add "/Applications/Microsoft Teams.app"
+dockutil --add /Applications/Spotify.app
+
 
