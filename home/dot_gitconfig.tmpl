@@ -1,13 +1,21 @@
 [user]
 	email = {{ .email }} 
 	name = {{ .name }}
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP3igIUiBSJvkiS60IgoVmce1fzQ+bfw0v2S84la1r0S
+    {{ if .work }}
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO/d2j0EfH+UEZEjMOP/QP4NCtq/9zJV8ipoqlUCGm1p
+    {{ else }}
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP3igIUiBSJvkiS60IgoVmce1fzQ+bfw0v2S84la1r0S
+    {{ end }}
 
 [gpg]
   format = ssh
 
 [gpg "ssh"]
-  program = "/opt/1Password/op-ssh-sign"
+    {{ if eq .os "darwin" }}
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+    {{ else }}
+    program = "/opt/1Password/op-ssh-sign"
+    {{ end }}
 
 [commit]
   gpgsign = true
