@@ -8,52 +8,14 @@ fi
 
 brew tap FelixKratz/formulae
 
-{{ $brews := list
-    "bat"
-    "dockutil"
-    "sketchybar"
-    "htop"
-    "jenv"
-    "jq"
-    "lazygit"
-    "lua"
-    "luajit"
-    "neovim"
-    "node"
-    "openjdk@8"
-    "openjdk@17"
-    "openjdk@21"
-    "ripgrep"
-    "tmux"
-    "wget"
-    "zsh" -}}
-{{ $casks := list
-    "1password-cli"
-    "1password"
-    "alacritty"
-    "brave-browser"
-    "font-meslo-for-powerlevel10k"
-    "microsoft-teams"
-    "mos"
-    "neovide"
-    "nikitabobko/tap/aerospace"
-    "intellij-idea-ce"
-    "obsidian"
-    "soapui"
-    "spotify"
-    "telegram"
-    "visual-studio-code"
-    "whatsapp"
-    -}}
-
-brew bundle --no-lock --file=/dev/stdin <<EOF
-{{ range ($brews | sortAlpha | uniq) -}}
-brew "{{ . }}"
+brew bundle --cleanup --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.darwin.taps -}}
+tap {{ . | quote }}
+{{end -}}
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
 {{ end -}}
-{{ range ($casks | sortAlpha | uniq) -}}
-cask "{{ . }}"
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
 {{ end -}}
 EOF
-
-
-
