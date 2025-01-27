@@ -6,11 +6,6 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
-# You can use it to add commands that run after AeroSpace startup.
-# 'after-startup-command' is run after 'after-login-command'
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
-
 # Start AeroSpace at login
 start-at-login = false
 
@@ -71,6 +66,9 @@ cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 
 cmd-q = 'close'
 cmd-m = 'fullscreen'
+
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'

@@ -6,13 +6,18 @@ if [ ! "$(command -v brew)" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+brew tap FelixKratz/formulae
+
 {{ $brews := list
     "bat"
     "dockutil"
+    "sketchybar"
     "htop"
     "jenv"
     "jq"
     "lazygit"
+    "lua"
+    "luajit"
     "neovim"
     "node"
     "openjdk@8"
