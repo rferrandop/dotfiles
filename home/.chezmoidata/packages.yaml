@@ -86,6 +86,7 @@ packages:
     - mos
     - neovide
     - obsidian
+    - postman
     - soapui
     - spotify
     - telegram
