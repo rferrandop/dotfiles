@@ -86,6 +86,7 @@ packages:
     - mos
     - neovide
     - obsidian
+    - openvpn-connect
     - postman
     - soapui
     - spotify
