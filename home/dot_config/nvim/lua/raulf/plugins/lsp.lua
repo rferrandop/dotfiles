@@ -12,7 +12,8 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "j-hui/fidget.nvim",
             "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim"
+            "williamboman/mason-lspconfig.nvim",
+            "mfussenegger/nvim-jdtls"
         },
 
         config = function()
@@ -63,6 +64,8 @@ return {
                             }
                         }
                     end,
+                    ["jdtls"] = function()
+                    end
                 }
             })
 
