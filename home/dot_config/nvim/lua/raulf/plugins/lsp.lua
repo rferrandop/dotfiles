@@ -11,17 +11,19 @@ return {
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
             "j-hui/fidget.nvim",
-            "williamboman/mason.nvim"
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim"
         },
 
         config = function()
             require("mason").setup()
 
             require("conform").setup({
-                formatters_by_ft = {
-                }
+                format_on_save = {
+                    timeout_ms = 500,
+                    lsp_format = "fallback",
+                },
             })
-            local lspconfig = require('lspconfig')
             local cmp = require('cmp')
             local cmp_lsp = require("cmp_nvim_lsp")
             local capabilities = vim.tbl_deep_extend(
@@ -32,33 +34,37 @@ return {
 
             require("fidget").setup({})
 
-            lspconfig.lua_ls.setup {
-                cmd = { "lua-language-server" },
-                capabilities = capabilities,
-                diagnostics = {
-                    globals = { 'vim' },
+            require("mason-lspconfig").setup({
+                automatic_installation = true,
+                ensure_installed = {
+                    "lua_ls",
+                    "rust_analyzer",
+                    "jdtls",
+                    "clangd",
+                    "taplo"
+                },
+                handlers = {
+                    function(server_name) -- default handler (optional)
+                        require("lspconfig")[server_name].setup {
+                            capabilities = capabilities
+                        }
+                    end,
+                    ["lua_ls"] = function()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.lua_ls.setup {
+                            capabilities = capabilities,
+                            settings = {
+                                Lua = {
+                                    runtime = { version = "Lua 5.1" },
+                                    diagnostics = {
+                                        globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+                                    }
+                                }
+                            }
+                        }
+                    end,
                 }
-            }
-
-            lspconfig.rust_analyzer.setup {
-                cmd = { "rust-analyzer" },
-                capabilities = capabilities,
-            }
-
-            lspconfig.csharp_ls.setup {
-                cmd = { "csharp-ls" },
-                capabilities = capabilities,
-            }
-
-            lspconfig.clangd.setup {
-                cmd = { "clangd" },
-                capabilities = capabilities,
-            }
-
-            lspconfig.nil_ls.setup {
-                cmd = { "nil" },
-                capabilities = capabilities,
-            }
+            })
 
             local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
