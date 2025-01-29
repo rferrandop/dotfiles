@@ -62,9 +62,8 @@ outer.right =      10
 #     activate
 # end tell'
 # '''
-cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+ctrl-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 
-cmd-q = 'close'
 cmd-m = 'fullscreen'
 
 cmd-h = [] # Disable "hide application"
