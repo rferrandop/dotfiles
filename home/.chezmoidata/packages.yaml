@@ -44,6 +44,7 @@ packages:
     - luv
     - lz4
     - lzo
+    - maven
     - mpdecimal
     - msgpack
     - ncurses
