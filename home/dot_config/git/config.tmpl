@@ -5,8 +5,10 @@ name = {{ .name }}
 signingkey = FAD706C7D6FABDF2
 {{ end }}
 
+{{ if not .work }}
 [commit]
 gpgsign = true
 [tag]
 gpgsign = true
+{{ end }}
 

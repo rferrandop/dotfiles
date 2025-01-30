@@ -80,6 +80,7 @@ packages:
     - alacritty
     - brave-browser
     - discord
+    - dbeaver-community
     - font-meslo-for-powerlevel10k
     - intellij-idea-ce
     - microsoft-auto-update
