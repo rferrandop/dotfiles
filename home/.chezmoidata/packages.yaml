@@ -89,6 +89,7 @@ packages:
     - neovide
     - obsidian
     - openvpn-connect
+    - portfolioperformance
     - postman
     - slack
     - soapui
