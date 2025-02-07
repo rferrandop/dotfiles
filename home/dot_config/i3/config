@@ -14,7 +14,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Variables
 #############################################
 set $mod Mod4
-set $terminal alacritty
+set $terminal kitty
 set $browser brave
 #set $browser zen-browser
 #############################################
