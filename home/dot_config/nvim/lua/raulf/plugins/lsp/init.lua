@@ -1,3 +1,5 @@
+local noop = function() end
+
 return {
     {
         "neovim/nvim-lspconfig",
@@ -15,7 +17,6 @@ return {
             "williamboman/mason-lspconfig.nvim",
             "mfussenegger/nvim-jdtls"
         },
-
         config = function()
             require("mason").setup()
 
@@ -40,7 +41,6 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "rust_analyzer",
-                    "jdtls",
                     "clangd",
                     "taplo"
                 },
@@ -50,6 +50,7 @@ return {
                             capabilities = capabilities
                         }
                     end,
+                    ['jdtls'] = noop,
                     ["lua_ls"] = function()
                         local lspconfig = require("lspconfig")
                         lspconfig.lua_ls.setup {
@@ -64,8 +65,6 @@ return {
                             }
                         }
                     end,
-                    ["jdtls"] = function()
-                    end
                 }
             })
 
