@@ -1,20 +1,10 @@
 return {
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        opts = {},
-        --config = function()
-            --vim.cmd.colorscheme('tokyonight-storm')
-       -- end
-    },
-    {
-        "nickkadutskyi/jb.nvim",
+        "tanvirtin/monokai.nvim",
         lazy = false,
         priority = 1000,
-        opts = {},
         config = function()
-            -- require("jb").setup({transparent = true})
-            vim.cmd("colorscheme jb")
-        end,
+            vim.cmd("colorscheme monokai_pro")
+        end
     }
 }

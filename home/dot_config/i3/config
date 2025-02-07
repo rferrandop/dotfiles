@@ -9,6 +9,7 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec feh --randomize --bg-fill ~/Pictures/wallpapers
 ##########################################################################
 
 # Variables
