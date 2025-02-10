@@ -84,6 +84,7 @@ packages:
     - dbeaver-community
     - font-meslo-for-powerlevel10k
     - intellij-idea-ce
+    - kitty
     - microsoft-auto-update
     - microsoft-teams
     - mos
