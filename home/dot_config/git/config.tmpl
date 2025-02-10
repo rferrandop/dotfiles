@@ -2,3 +2,9 @@
 email = {{ .email }} 
 name = {{ .name }}
 
+[gpg]
+format = ssh
+
+[user]
+# This signing key would have the same filename accross multiple machines but the key would be different depending on the machine
+signingKey = ~/.ssh/id_raulf.pub
