@@ -1,9 +1,13 @@
 cursor_trail 3
 
 # Switch tabs
+{{ if .work -}}
+map cmd+shift+l next_tab
+map cmd+shift+h previous_tab
+{{ else }}
 map ctrl+shift+l next_tab
 map ctrl+shift+h previous_tab
-
+{{ end -}}
 
 # BEGIN_KITTY_FONTS
 font_family      family="MesloLGS NF"

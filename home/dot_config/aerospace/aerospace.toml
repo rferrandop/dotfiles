@@ -129,12 +129,16 @@ if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
 if.app-id = 'com.brave.Browser'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-run = 'move-node-to-workspace 6'
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
@@ -143,3 +147,7 @@ run = 'move-node-to-workspace 10'
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij.ce'
 run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace 9'
