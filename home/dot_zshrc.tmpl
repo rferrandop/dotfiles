@@ -22,8 +22,8 @@ export KITTY_CONFIG_DIRECTORY=$HOME/.config/kitty
 
 # add jenv to path only for work hosts
 {{ if .work }}
-export PATH=$HOME/.jenv/bin:$PATH
-eval "$(jenv init -)"
+#export PATH=$HOME/.jenv/bin:$PATH
+#eval "$(jenv init -)"
 {{ end }}
 {{ if not .work }} 
 export PATH="$HOME/.cargo/bin:$PATH"
