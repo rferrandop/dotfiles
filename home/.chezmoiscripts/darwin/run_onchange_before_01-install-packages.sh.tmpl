@@ -6,8 +6,6 @@ if [ ! "$(command -v brew)" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew tap FelixKratz/formulae
-
 brew bundle --cleanup --no-lock --file=/dev/stdin <<EOF
 {{ range .packages.darwin.taps -}}
 tap {{ . | quote }}

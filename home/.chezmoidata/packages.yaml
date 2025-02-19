@@ -5,6 +5,7 @@ packages:
     brews:
     - git
     - htop
+    - jenv
     - jq
     - lazygit
     - maven
