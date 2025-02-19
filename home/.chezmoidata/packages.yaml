@@ -39,5 +39,6 @@ packages:
     - soapui
     - spotify
     - telegram
+    - tradingview
     - wireshark
     - whatsapp
