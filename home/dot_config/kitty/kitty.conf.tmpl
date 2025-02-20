@@ -1,5 +1,9 @@
 cursor_trail 3
 
+{{ if eq .os "darwin" -}}
+macos_quit_when_last_window_closed yes
+{{ end -}}
+
 # Switch tabs
 {{ if .work -}}
 map cmd+shift+l next_tab

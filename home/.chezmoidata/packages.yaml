@@ -22,7 +22,7 @@ packages:
     - 1password
     - 1password-cli
     - aerospace
-    - brave-browser@nightly
+    - brave-browser
     - discord
     - dbeaver-community
     - docker
