@@ -63,6 +63,7 @@ outer.right = 10
 # end tell'
 # '''
 ctrl-enter = 'exec-and-forget open -n /Applications/kitty.app'
+ctrl-b = 'exec-and-forget open -n /Applications/Brave\ Browser.app'
 
 cmd-m = 'fullscreen'
 
