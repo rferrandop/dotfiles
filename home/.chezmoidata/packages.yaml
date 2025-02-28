@@ -3,6 +3,7 @@ packages:
     taps:
     - nikitabobko/tap
     brews:
+    - chezmoi
     - git
     - htop
     - jenv
