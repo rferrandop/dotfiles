@@ -27,6 +27,7 @@ packages:
     - dbeaver-community
     - docker
     - font-meslo-for-powerlevel10k
+    - google-chrome
     - intellij-idea-ce
     - kitty
     - microsoft-teams
