@@ -16,7 +16,7 @@ exec feh --randomize --bg-fill ~/Pictures/wallpapers
 #############################################
 set $mod Mod4
 set $terminal kitty
-set $browser brave
+set $browser firefox
 #set $browser zen-browser
 #############################################
 
@@ -138,9 +138,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Media control
-bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +2%
-bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -2%
-bindsym XF86AudioMute exec pactl -- set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -2%
+bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPlay exec playerctl play-pause
