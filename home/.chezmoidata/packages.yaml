@@ -27,6 +27,7 @@ packages:
     - discord
     - dbeaver-community
     - docker
+    - firefox
     - font-meslo-for-powerlevel10k
     - google-chrome
     - intellij-idea-ce
