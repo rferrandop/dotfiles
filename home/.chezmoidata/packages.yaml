@@ -24,6 +24,7 @@ packages:
     - 1password-cli
     - aerospace
     - brave-browser
+    - calibre
     - discord
     - dbeaver-community
     - docker
@@ -42,6 +43,8 @@ packages:
     - soapui
     - spotify
     - telegram
+    - trader-workstation
     - tradingview
     - wireshark
     - whatsapp
+    - zoom
