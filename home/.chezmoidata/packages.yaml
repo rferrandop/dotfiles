@@ -2,6 +2,8 @@ packages:
   darwin:
     taps:
     - nikitabobko/tap
+    - koekeishiya/formulae
+    - FelixKratz/formulae
     brews:
     - chezmoi
     - git
@@ -9,6 +11,7 @@ packages:
     - jenv
     - jq
     - lazygit
+    - lua
     - maven
     - neovim
     - node
@@ -16,20 +19,26 @@ packages:
     - openjdk@21
     - openssl@3
     - ripgrep
+    - sketchybar
     - speedtest-cli
+    - skhd
+    - tmux
     - wget
+    - yabai
     - zsh
     casks:
     - 1password
     - 1password-cli
-    - aerospace
-    - brave-browser
+    - alacritty 
     - calibre
     - discord
     - dbeaver-community
     - docker
     - firefox
     - font-meslo-for-powerlevel10k
+    - font-sketchybar-app-font
+    - font-sf-mono
+    - font-sf-pro
     - google-chrome
     - intellij-idea-ce
     - kitty
@@ -39,6 +48,7 @@ packages:
     - obsidian
     - openvpn-connect
     - postman
+    - sf-symbols
     - slack
     - soapui
     - spotify
