@@ -59,4 +59,5 @@ cmd + ctrl - tab : id="$(yabai -m query --spaces --display | jq 'sort_by(.index)
 
 # Open Chrome
 ctrl - b : open /Applications/Google\ Chrome.app
+ctrl - return : open /Applications/Alacritty.app
 
