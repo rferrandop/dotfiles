@@ -27,7 +27,7 @@ style = "Regular"
 {{ if eq .osId "darwin" }}
 program = "/usr/local/bin/tmux"
 {{ else }}
-program = "/bin/tmux"
+program = "/usr/bin/tmux"
 {{ end }}
 args = [
     "new-session",
