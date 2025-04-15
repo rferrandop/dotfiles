@@ -58,6 +58,5 @@ cmd - tab : id="$(yabai -m query --spaces --display | jq 'sort_by(.index) | reve
 cmd + ctrl - tab : id="$(yabai -m query --spaces --display | jq 'sort_by(.index) | .[map(."has-focus") | index(true) - 1].index')" && yabai -m space --focus "${id}"
 
 # Open Chrome
-ctrl - b : open /Applications/Google\ Chrome.app
 ctrl - return : open /Applications/Alacritty.app
 
