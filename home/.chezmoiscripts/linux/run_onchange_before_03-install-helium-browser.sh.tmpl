@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eufo pipefail
+
+VERSION=0.9.4.1
+
+curl -L -o /tmp/helium-browser-${VERSION}.flatpak https://github.com/ShyVortex/helium-flatpak/releases/download/$VERSION/helium-$VERSION-x86_64.flatpak
+
+flatpak install /tmp/helium-browser-${VERSION}.flatpak

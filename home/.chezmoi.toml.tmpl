@@ -1,0 +1,11 @@
+{{- $email := promptStringOnce . "email" "Your email address" -}}
+{{- $work := false }}
+
+{{- $os := .chezmoi.os -}}
+{{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
+{{-	$os = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
+[data]
+    email = {{ $email | quote }}
+    osId = {{ $os | quote }}

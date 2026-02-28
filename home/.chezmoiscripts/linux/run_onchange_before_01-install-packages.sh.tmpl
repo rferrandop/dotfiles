@@ -1,0 +1,42 @@
+{{- if eq .osId "linux-fedora" -}}
+
+{{ $packages := list
+    "alacritty"
+    "btop"
+    "fzf"
+    "git"
+    "jq"
+    "neovim"
+    "ripgrep"
+    "speedtest-cli"
+    "tmux"
+    "zsh"
+-}}
+
+{{ $flatPackages := list
+    "com.bitwarden.desktop"
+    "com.discordapp.Discord"
+    "com.spotify.Client"
+    "com.jetbrains.IntelliJ-IDEA-Community"
+-}}
+
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $sudo := "sudo" -}}
+{{ if eq .chezmoi.username "root" -}}
+{{ 	$sudo = "" -}}
+{{ end -}}
+
+
+{{ $sudo }} dnf update
+{{ $sudo }} dnf install -y {{ $packages | join " " }}
+
+flatpak install -y flathub {{ $flatPackages | join " " }}
+
+## Copr packages
+{{ $sudo }} dnf -y copr enable dejan/lazygit
+{{ $sudo }} dnf -y install lazygit
+
+{{- end -}}
