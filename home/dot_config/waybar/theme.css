@@ -1,0 +1,9 @@
+@define-color background #1a1b26;
+@define-color foreground #cdd6f4;
+* {
+	color: #cdd6f4;
+}
+
+window#waybar {
+	background-color: #1a1b26;
+}
