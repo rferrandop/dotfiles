@@ -27,6 +27,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
+                "jdtls",
                 "rust_analyzer",
                 "gopls",
                 "vtsls",
@@ -53,6 +54,8 @@ return {
                     })
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
+                end,
+                jdtls = function()
 
                 end,
                 ["lua_ls"] = function()
