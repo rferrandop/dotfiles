@@ -1,5 +1,5 @@
 {{- $email := promptStringOnce . "email" "Your email address" -}}
-{{- $work := false }}
+{{- $work := promptBoolOnce . "work" "Is this a work-related computer?" -}}
 
 {{- $os := .chezmoi.os -}}
 {{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
@@ -7,5 +7,6 @@
 {{- end -}}
 
 [data]
+    isWork = {{ $work }}
     email = {{ $email | quote }}
     osId = {{ $os | quote }}
